@@ -24,3 +24,16 @@ export async function userInfoRequest(){
     const data = await respone.json();
     return data;
 }
+
+export async function getPostRequest () {
+    const response = await fetch(`/api/auth/post`, {
+        method: "GET",
+        headers: {
+            "content-type": "application/json"
+        }
+    })
+
+    const data = await response.json();
+
+    return data;
+}
