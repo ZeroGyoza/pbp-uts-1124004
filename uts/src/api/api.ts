@@ -1,3 +1,4 @@
+import { useParams } from "react-router";
 
 export async function loginRequest(email: string, password: string) {
     const response = await fetch(`/api/auth/login`, {
@@ -14,8 +15,8 @@ export async function loginRequest(email: string, password: string) {
 
 }
 
-export async function userInfoRequest(){
-    const respone = await fetch(`/api/auth/me`, {
+export async function bookDetailRequest(){
+    const respone = await fetch(`/api/buku/:id`, {
         method: "GET",
         headers: {
             "content-type": "application/json"
@@ -26,15 +27,31 @@ export async function userInfoRequest(){
 }
 
 export async function getPostRequest () {
-    const response = await fetch(`/api/auth/post`, {
+    const response = await fetch(`/api/buku`, {
         method: "GET",
         headers: {
             "content-type": "application/json"
         }
+        
     })
 
     const data = await response.json();
     console.log(data);
     
     return data;
+}
+
+export async function updatedRequest () {
+    const response = await fetch(`/api/buku`, {
+        method: "PUT",
+        headers: {
+            "content-type": "application/json"
+        }
+        
+    })
+
+    const json = await response.json();
+    console.log(json);
+    
+    return json;
 }

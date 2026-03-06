@@ -1,14 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export type post = {
-    id: string,
-    title: string,
-    content: string,
-    status: string,
-    userId: string,
-    user: {
-        name: string
-    }
+        judul: String,
+        deskripsi: String,
+        kategori: String,
+        status: String
+        imageurl: String
 }
 
 type postState = {

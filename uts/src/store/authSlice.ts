@@ -1,14 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type userDetail = {
-    email : string,
-    name : string,
-    role : string,
-    id : string
+type bookDetail = {
+    id : string,
+    judul : string,
+    deskripsi : string,
+    tahun : string,
+    kategori : string,
+    status : string,
+    peminjam : null,
+    imageUrl : string,
+    createdAt : string,
+    updatedAt : string
 }
 
 type authState = {
-    user : userDetail | null;
+    user : bookDetail | null;
 }
 
 const initialState : authState = {
